@@ -37,7 +37,7 @@ export default function StoryComplete() {
         <div className="mb-16 relative w-72 h-[360px] mx-auto perspective-[1000px] animate-in zoom-in-95 fade-in duration-1000 delay-300">
           <div className="w-full h-full bg-white rounded-r-2xl rounded-l-sm shadow-2xl shadow-ember/10 border-l-8 border-ember flex flex-col items-center justify-center p-8 transform rotate-y-[-10deg] rotate-x-[2deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-500">
             <div className="w-40 h-40 bg-candy/10 rounded-full mb-8 overflow-hidden relative border-4 border-warm-cream shadow-inner">
-               <Image src="https://picsum.photos/seed/space-cat-nebula/300/300" alt="Cover art" fill className="object-cover" />
+               <Image src="https://picsum.photos/seed/space-cat-nebula/300/300" alt="Cover art" fill sizes="160px" className="object-cover" />
             </div>
             <h4 className="font-playfair text-ink font-bold text-2xl mb-3 text-center leading-tight">Luna&apos;s Space Adventure</h4>
             <div className="w-12 h-px bg-ink/10 mb-3" />

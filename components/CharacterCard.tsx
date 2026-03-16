@@ -32,10 +32,11 @@ export function CharacterCard({ name, role, description, imageUrl, themeColor, o
     >
       <div className={`aspect-square rounded-xl ${theme.bg} mb-6 relative overflow-hidden`}>
         <Image 
-          src={imageUrl} 
-          alt={name} 
-          fill 
-          className={`object-cover transition-all duration-700 ${selected ? 'scale-110 opacity-100' : 'opacity-90 group-hover:opacity-100 group-hover:scale-105'}`} 
+          src={imageUrl}
+          alt={name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className={`object-cover transition-all duration-700 ${selected ? 'scale-110 opacity-100' : 'opacity-90 group-hover:opacity-100 group-hover:scale-105'}`}
           referrerPolicy="no-referrer"
         />
         {selected && (

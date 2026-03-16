@@ -28,7 +28,7 @@ export default function StoryStudio() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-warm-cream text-ink flex flex-col h-screen overflow-hidden">
+    <main className="bg-warm-cream text-ink flex flex-col h-screen overflow-hidden">
       {/* Top Bar */}
       <header className="h-16 border-b border-ink/5 flex items-center justify-between px-6 shrink-0 bg-white z-20">
         <div className="flex items-center gap-4">
@@ -57,10 +57,12 @@ export default function StoryStudio() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex-1 relative m-6 rounded-2xl overflow-hidden shadow-2xl shadow-ink/10 border border-ink/5"
             >
-              <Image 
-                src={`https://picsum.photos/seed/space-cat-nebula-${activePage}/1200/1600`} 
-                alt="Story illustration" 
-                fill 
+              <Image
+                src={`https://picsum.photos/seed/space-cat-nebula-${activePage}/1200/1600`}
+                alt="Story illustration"
+                fill
+                sizes="(max-width: 768px) 100vw, 60vw"
+                priority
                 className="object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -75,7 +77,7 @@ export default function StoryStudio() {
                 transition={{ delay: 0.5 }}
                 className="absolute bottom-4 left-4 w-16 h-16 rounded-full border-2 border-sunflower overflow-hidden shadow-lg"
               >
-                <Image src="https://picsum.photos/seed/cat-space/200/200" alt="Luna" fill className="object-cover" />
+                <Image src="https://picsum.photos/seed/cat-space/200/200" alt="Luna" fill sizes="64px" className="object-cover" />
               </motion.div>
               
               {/* Magic Sparkles Overlay */}
@@ -156,7 +158,7 @@ export default function StoryStudio() {
       </div>
 
       {/* Bottom Strip: Page Thumbnails */}
-      <div className="h-24 bg-white border-t border-ink/5 flex items-center px-6 gap-4 overflow-x-auto shrink-0 z-20">
+      <div className="h-24 bg-white border-t border-ink/5 flex items-center px-6 gap-4 overflow-x-auto scrollbar-hide shrink-0 z-20">
         <div className="flex items-center gap-3">
           {/* Page 1 */}
           <motion.div 
@@ -164,7 +166,7 @@ export default function StoryStudio() {
             onClick={() => setActivePage(1)}
             className={`w-16 h-16 rounded-lg overflow-hidden relative border cursor-pointer transition-all ${activePage === 1 ? 'border-ember ring-2 ring-ember/20' : 'border-ink/10 opacity-60 hover:opacity-100'}`}
           >
-            <Image src="https://picsum.photos/seed/page1/100/100" alt="Page 1" fill className="object-cover" />
+            <Image src="https://picsum.photos/seed/page1/100/100" alt="Page 1" fill sizes="64px" className="object-cover" />
             <div className="absolute bottom-1 right-1 bg-ink/60 text-white text-[10px] px-1.5 rounded">1</div>
           </motion.div>
           {/* Page 2 */}
@@ -173,7 +175,7 @@ export default function StoryStudio() {
             onClick={() => setActivePage(2)}
             className={`w-16 h-16 rounded-lg overflow-hidden relative border cursor-pointer transition-all ${activePage === 2 ? 'border-ember ring-2 ring-ember/20' : 'border-ink/10 opacity-60 hover:opacity-100'}`}
           >
-            <Image src="https://picsum.photos/seed/page2/100/100" alt="Page 2" fill className="object-cover" />
+            <Image src="https://picsum.photos/seed/page2/100/100" alt="Page 2" fill sizes="64px" className="object-cover" />
             <div className="absolute bottom-1 right-1 bg-ink/60 text-white text-[10px] px-1.5 rounded">2</div>
           </motion.div>
           {/* Page 3 */}
@@ -182,7 +184,7 @@ export default function StoryStudio() {
             onClick={() => setActivePage(3)}
             className={`w-16 h-16 rounded-lg overflow-hidden relative border cursor-pointer transition-all ${activePage === 3 ? 'border-ember ring-2 ring-ember/20' : 'border-ink/10 opacity-60 hover:opacity-100'}`}
           >
-            <Image src="https://picsum.photos/seed/space-cat-nebula-3/100/100" alt="Page 3" fill className="object-cover" />
+            <Image src="https://picsum.photos/seed/space-cat-nebula-3/100/100" alt="Page 3" fill sizes="64px" className="object-cover" />
             <div className="absolute bottom-1 right-1 bg-ink/60 text-white text-[10px] px-1.5 rounded">3</div>
           </motion.div>
           {/* Add New Page */}

@@ -207,7 +207,7 @@ export default function LandingPage() {
           >
             <div className="w-full h-full bg-warm-cream rounded-r-2xl rounded-l-sm shadow-2xl shadow-sunflower/20 border-l-8 border-ember flex flex-col items-center justify-center p-6 transform rotate-y-[-15deg] rotate-x-[5deg] animate-float">
               <div className="w-32 h-32 bg-horizon/20 rounded-full mb-6 overflow-hidden relative">
-                 <Image src="https://picsum.photos/seed/storybook-cover/200/200" alt="Cover art" fill className="object-cover" />
+                 <Image src="https://picsum.photos/seed/storybook-cover/200/200" alt="Cover art" fill sizes="128px" priority className="object-cover" />
               </div>
               <h4 className="font-playfair text-ink font-bold text-xl mb-2 text-center">The Great Space Race</h4>
               <p className="font-nunito text-ink/60 text-xs uppercase tracking-widest text-center">Written by Leo, age 6</p>
