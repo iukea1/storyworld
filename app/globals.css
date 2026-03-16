@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-warm-cream: #fff8e8;
+  --color-ember: #e8520a;
+  --color-sunflower: #ffd060;
+  --color-horizon: #68c8f0;
+  --color-candy: #ff9090;
+  --color-ink: #2d2a26;
+  --color-parchment: #fffcf5;
+  
+  /* Legacy mappings to prevent immediate breakage while I update components */
+  --color-night: #fff8e8;
+  --color-gold: #ffd060;
+  --color-amber: #e8520a;
+  --color-sky: #68c8f0;
+  --color-lavender: #ff9090;
+
+  --font-playfair: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-lora: var(--font-lora), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-nunito: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotateY(-15deg) rotateX(5deg); }
+    50% { transform: translateY(-20px) rotateY(-15deg) rotateX(5deg); }
+  }
+}
+
+body {
+  background-color: var(--color-warm-cream);
+  color: var(--color-ink);
+  font-family: var(--font-lora);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair);
+}
