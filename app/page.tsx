@@ -8,6 +8,8 @@ import { Mic, Sparkles, BookOpen, ShieldCheck, Ban, Lock, CheckCircle2, ChevronD
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -28,14 +30,14 @@ export default function LandingPage() {
     <main className="flex-col flex min-h-screen">
       {/* Nav */}
       <nav className="absolute top-0 w-full z-50 px-6 py-6 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
           <LogoConcept1 />
         </motion.div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -53,13 +55,13 @@ export default function LandingPage() {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-horizon/20 via-candy/10 to-warm-cream pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sunflower/20 blur-[120px] rounded-full pointer-events-none" />
 
-        <motion.div 
+        <motion.div
           initial="initial"
           animate="animate"
           variants={staggerContainer}
           className="relative z-10 max-w-4xl mx-auto flex flex-col items-center mt-10"
         >
-          <motion.h1 
+          <motion.h1
             variants={fadeInUp}
             className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold text-ink leading-[1.1] mb-6 tracking-tight"
           >
@@ -67,26 +69,30 @@ export default function LandingPage() {
             <span className="italic text-ember font-medium">epic adventure</span><br />
             starts here
           </motion.h1>
-          <motion.p 
+          <motion.p
             variants={fadeInUp}
             className="font-lora text-lg md:text-xl text-ink/70 max-w-2xl mb-10 leading-relaxed"
           >
             Talk, imagine, create. Watch your story come alive with original artwork — page by page.
           </motion.p>
-          <motion.div 
+          <motion.div
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 items-center"
           >
-            <Link href="/characters" className="bg-ember text-white font-nunito font-bold text-lg px-8 py-4 rounded-full hover:bg-ember/90 transition-transform hover:scale-105 active:scale-95 flex items-center gap-2 shadow-lg shadow-ember/20">
-              Make your first free story <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link href="#how-it-works" className="text-ink/70 font-nunito font-bold text-lg px-8 py-4 rounded-full hover:bg-ink/5 transition-colors flex items-center gap-2">
-              See how it works <ChevronDown className="w-5 h-5" />
-            </Link>
+            <Button asChild>
+              <Link href="/characters">
+                Make your first free story <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
+            <Button asChild variant="ghost">
+              <Link href="#how-it-works">
+                See how it works <ChevronDown className="w-5 h-5" />
+              </Link>
+            </Button>
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
@@ -99,7 +105,7 @@ export default function LandingPage() {
       {/* Section 2 - How It Works */}
       <section id="how-it-works" className="bg-parchment text-ink py-24 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <motion.div 
+          <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -137,7 +143,7 @@ export default function LandingPage() {
       {/* Section 3 - Characters */}
       <section id="characters" className="bg-warm-cream text-ink py-24 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -147,7 +153,7 @@ export default function LandingPage() {
             <h2 className="font-playfair text-4xl md:text-5xl font-bold">Choose your companion</h2>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -155,39 +161,39 @@ export default function LandingPage() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             <motion.div variants={fadeInUp}>
-              <CharacterCard 
-                name="Bear" 
-                role="Detective Dog" 
-                description="Always sniffing out the next big mystery." 
-                imageUrl="https://picsum.photos/seed/bear-detective/400/400" 
-                themeColor="horizon" 
+              <CharacterCard
+                name="Bear"
+                role="Detective Dog"
+                description="Always sniffing out the next big mystery."
+                imageUrl="https://picsum.photos/seed/bear-detective/400/400"
+                themeColor="horizon"
               />
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <CharacterCard 
-                name="Luna" 
-                role="Space Cat" 
-                description="Ready to explore the farthest galaxies." 
-                imageUrl="https://picsum.photos/seed/cat-space/400/400" 
-                themeColor="candy" 
+              <CharacterCard
+                name="Luna"
+                role="Space Cat"
+                description="Ready to explore the farthest galaxies."
+                imageUrl="https://picsum.photos/seed/cat-space/400/400"
+                themeColor="candy"
               />
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <CharacterCard 
-                name="Pip" 
-                role="Dragon Chef" 
-                description="Baking magical treats with a little fire." 
-                imageUrl="https://picsum.photos/seed/dragon-chef/400/400" 
-                themeColor="ember" 
+              <CharacterCard
+                name="Pip"
+                role="Dragon Chef"
+                description="Baking magical treats with a little fire."
+                imageUrl="https://picsum.photos/seed/dragon-chef/400/400"
+                themeColor="ember"
               />
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <CharacterCard 
-                name="Mochi" 
-                role="Wizard Bunny" 
-                description="Pulling spells out of a very deep hat." 
-                imageUrl="https://picsum.photos/seed/bunny-wizard/400/400" 
-                themeColor="sunflower" 
+              <CharacterCard
+                name="Mochi"
+                role="Wizard Bunny"
+                description="Pulling spells out of a very deep hat."
+                imageUrl="https://picsum.photos/seed/bunny-wizard/400/400"
+                themeColor="sunflower"
               />
             </motion.div>
           </motion.div>
@@ -198,7 +204,7 @@ export default function LandingPage() {
       <section className="bg-parchment text-ink py-32 px-6 relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Floating Book Animation */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9, rotateY: -30 }}
             whileInView={{ opacity: 1, scale: 1, rotateY: -15 }}
             viewport={{ once: true }}
@@ -214,7 +220,7 @@ export default function LandingPage() {
             </div>
           </motion.div>
 
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -222,7 +228,7 @@ export default function LandingPage() {
           >
             &quot;The memory isn&apos;t the story. It&apos;s making it together.&quot;
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -231,15 +237,16 @@ export default function LandingPage() {
           >
             A child&apos;s voice directing the adventure. A parent reading it back at bedtime. A book on the shelf years later that starts with &apos;This story was written by…&apos;
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="inline-flex items-center gap-3 bg-sunflower/10 border border-sunflower/20 rounded-full px-6 py-3 font-nunito text-sm text-ember"
           >
-            <BookOpen className="w-5 h-5" />
-            <span>Every story can become a real book — delivered to your door.</span>
+            <Badge variant="outline" className="bg-secondary/10 border-secondary/20 text-primary px-6 py-3 text-sm">
+              <BookOpen className="w-5 h-5" />
+              <span>Every story can become a real book — delivered to your door.</span>
+            </Badge>
           </motion.div>
         </div>
       </section>
@@ -247,7 +254,7 @@ export default function LandingPage() {
       {/* Section 5 - Safety & Trust */}
       <section className="bg-warm-cream text-ink py-24 px-6 border-t border-ink/5 relative z-10">
         <div className="max-w-5xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -256,7 +263,7 @@ export default function LandingPage() {
             <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4">Built for little imaginations.<br/>Trusted by parents.</h2>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -313,7 +320,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start">
             <LogoConcept1 />
-            <p className="font-nunito text-warm-cream/50 text-sm mt-4">© 2026 StoryWorld. All rights reserved.</p>
+            <p className="font-nunito text-warm-cream/50 text-sm mt-4">&copy; 2026 StoryWorld. All rights reserved.</p>
           </div>
           <div className="flex gap-8 font-nunito text-sm font-semibold">
             <Link href="#" className="hover:text-sunflower transition-colors">Privacy Policy</Link>

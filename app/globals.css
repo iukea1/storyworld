@@ -9,13 +9,45 @@
   --color-candy: #ff9090;
   --color-ink: #2d2a26;
   --color-parchment: #fffcf5;
-  
+
   /* Legacy mappings to prevent immediate breakage while I update components */
   --color-night: #fff8e8;
   --color-gold: #ffd060;
   --color-amber: #e8520a;
   --color-sky: #68c8f0;
   --color-lavender: #ff9090;
+
+  /* shadcn/ui semantic colors */
+  --color-background: #fff8e8;
+  --color-foreground: #2d2a26;
+  --color-card: #ffffff;
+  --color-card-foreground: #2d2a26;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #2d2a26;
+  --color-primary: #e8520a;
+  --color-primary-foreground: #fff8e8;
+  --color-secondary: #ffd060;
+  --color-secondary-foreground: #e8520a;
+  --color-muted: #fffcf5;
+  --color-muted-foreground: #2d2a2699;
+  --color-accent: #68c8f0;
+  --color-accent-foreground: #2d2a26;
+  --color-destructive: #ff9090;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #2d2a260d;
+  --color-input: #2d2a261a;
+  --color-ring: #e8520a33;
+
+  --color-sidebar-background: #ffffff;
+  --color-sidebar-foreground: #2d2a26;
+  --color-sidebar-primary: #e8520a;
+  --color-sidebar-primary-foreground: #fff8e8;
+  --color-sidebar-accent: #fffcf5;
+  --color-sidebar-accent-foreground: #2d2a26;
+  --color-sidebar-border: #2d2a260d;
+  --color-sidebar-ring: #e8520a33;
+
+  --radius: 0.75rem;
 
   --font-playfair: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-lora: var(--font-lora), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;

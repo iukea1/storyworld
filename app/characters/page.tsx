@@ -7,6 +7,7 @@ import { LogoConcept2 } from '@/components/Logo';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
+import { Button } from '@/components/ui/button';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -28,7 +29,7 @@ export default function CharacterPicker() {
   return (
     <main className="min-h-screen bg-warm-cream text-ink relative overflow-hidden flex flex-col">
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-horizon/10 via-candy/5 to-warm-cream pointer-events-none" />
-      
+
       <nav className="relative z-10 px-6 py-6 flex justify-between items-center max-w-7xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -42,14 +43,16 @@ export default function CharacterPicker() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <Link href="/" className="flex items-center gap-2 font-nunito text-sm text-ink/60 hover:text-ink transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Back
-          </Link>
+          <Button asChild variant="ghost" size="sm">
+            <Link href="/">
+              <ArrowLeft className="w-4 h-4" /> Back
+            </Link>
+          </Button>
         </motion.div>
       </nav>
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 max-w-7xl mx-auto w-full">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
@@ -58,52 +61,52 @@ export default function CharacterPicker() {
           <h1 className="font-playfair text-4xl md:text-5xl font-bold">Choose your hero</h1>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="initial"
           animate="animate"
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-16"
         >
           <motion.div variants={fadeInUp}>
-            <CharacterCard 
-              name="Bear" 
-              role="Detective Dog" 
-              description="Always sniffing out the next big mystery." 
-              imageUrl="https://picsum.photos/seed/bear-detective/400/400" 
-              themeColor="horizon" 
+            <CharacterCard
+              name="Bear"
+              role="Detective Dog"
+              description="Always sniffing out the next big mystery."
+              imageUrl="https://picsum.photos/seed/bear-detective/400/400"
+              themeColor="horizon"
               selected={selectedChar === 'Bear'}
               onClick={() => setSelectedChar('Bear')}
             />
           </motion.div>
           <motion.div variants={fadeInUp}>
-            <CharacterCard 
-              name="Luna" 
-              role="Space Cat" 
-              description="Ready to explore the farthest galaxies." 
-              imageUrl="https://picsum.photos/seed/cat-space/400/400" 
-              themeColor="candy" 
+            <CharacterCard
+              name="Luna"
+              role="Space Cat"
+              description="Ready to explore the farthest galaxies."
+              imageUrl="https://picsum.photos/seed/cat-space/400/400"
+              themeColor="candy"
               selected={selectedChar === 'Luna'}
               onClick={() => setSelectedChar('Luna')}
             />
           </motion.div>
           <motion.div variants={fadeInUp}>
-            <CharacterCard 
-              name="Pip" 
-              role="Dragon Chef" 
-              description="Baking magical treats with a little fire." 
-              imageUrl="https://picsum.photos/seed/dragon-chef/400/400" 
-              themeColor="ember" 
+            <CharacterCard
+              name="Pip"
+              role="Dragon Chef"
+              description="Baking magical treats with a little fire."
+              imageUrl="https://picsum.photos/seed/dragon-chef/400/400"
+              themeColor="ember"
               selected={selectedChar === 'Pip'}
               onClick={() => setSelectedChar('Pip')}
             />
           </motion.div>
           <motion.div variants={fadeInUp}>
-            <CharacterCard 
-              name="Mochi" 
-              role="Wizard Bunny" 
-              description="Pulling spells out of a very deep hat." 
-              imageUrl="https://picsum.photos/seed/bunny-wizard/400/400" 
-              themeColor="sunflower" 
+            <CharacterCard
+              name="Mochi"
+              role="Wizard Bunny"
+              description="Pulling spells out of a very deep hat."
+              imageUrl="https://picsum.photos/seed/bunny-wizard/400/400"
+              themeColor="sunflower"
               selected={selectedChar === 'Mochi'}
               onClick={() => setSelectedChar('Mochi')}
             />
@@ -119,12 +122,14 @@ export default function CharacterPicker() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 10 }}
               >
-                <Link href="/studio" className="bg-ember text-white font-nunito font-bold text-lg px-10 py-4 rounded-full hover:bg-ember/90 transition-transform hover:scale-105 active:scale-95 flex items-center gap-2 shadow-xl shadow-ember/20">
-                  Start this adventure <ArrowRight className="w-5 h-5" />
-                </Link>
+                <Button asChild className="shadow-xl shadow-ember/20">
+                  <Link href="/studio">
+                    Start this adventure <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
               </motion.div>
             ) : (
-              <motion.div 
+              <motion.div
                 key="hint"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
