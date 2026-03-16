@@ -5,12 +5,14 @@ import { LogoConcept1 } from '@/components/Logo';
 import { Download, BookOpen, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 
 export default function StoryComplete() {
   return (
     <main className="min-h-screen bg-warm-cream text-ink relative overflow-hidden flex flex-col">
       <Starfield />
-      
+
       {/* Celebration effect */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-sunflower/20 rounded-full blur-3xl animate-pulse" />
@@ -25,7 +27,7 @@ export default function StoryComplete() {
       </nav>
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 max-w-4xl mx-auto w-full text-center">
-        
+
         <h1 className="font-playfair text-5xl md:text-6xl font-bold mb-4 text-ember animate-in slide-in-from-bottom-4 fade-in duration-700">
           The End!
         </h1>
@@ -40,25 +42,27 @@ export default function StoryComplete() {
                <Image src="https://picsum.photos/seed/space-cat-nebula/300/300" alt="Cover art" fill className="object-cover" />
             </div>
             <h4 className="font-playfair text-ink font-bold text-2xl mb-3 text-center leading-tight">Luna&apos;s Space Adventure</h4>
-            <div className="w-12 h-px bg-ink/10 mb-3" />
+            <Separator className="w-12 mb-3" />
             <p className="font-nunito text-ink/60 text-xs uppercase tracking-widest text-center font-bold">Written by Leo, age 6</p>
           </div>
         </div>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-12 animate-in slide-in-from-bottom-4 fade-in duration-700 delay-500">
-          <button className="bg-ember text-white font-nunito font-bold text-lg px-8 py-4 rounded-full hover:bg-ember/90 transition-transform hover:scale-105 active:scale-95 flex items-center gap-2 w-full sm:w-auto justify-center shadow-lg shadow-ember/20">
+          <Button className="w-full sm:w-auto">
             <Download className="w-5 h-5" /> Download your book (PDF)
-          </button>
-          
-          <button className="bg-sunflower text-ember font-nunito font-bold text-lg px-8 py-4 rounded-full hover:bg-sunflower/90 transition-transform hover:scale-105 active:scale-95 flex items-center gap-2 w-full sm:w-auto justify-center shadow-lg shadow-sunflower/20">
+          </Button>
+
+          <Button variant="secondary" className="w-full sm:w-auto">
             <BookOpen className="w-5 h-5" /> Order a printed copy — from $14.99
-          </button>
+          </Button>
         </div>
 
-        <Link href="/characters" className="text-ink/60 hover:text-ember font-nunito font-bold flex items-center gap-2 transition-colors animate-in slide-in-from-bottom-4 fade-in duration-700 delay-700">
-          Start a new adventure <ArrowRight className="w-4 h-4" />
-        </Link>
+        <Button asChild variant="link" className="animate-in slide-in-from-bottom-4 fade-in duration-700 delay-700">
+          <Link href="/characters">
+            Start a new adventure <ArrowRight className="w-4 h-4" />
+          </Link>
+        </Button>
       </div>
     </main>
   );
